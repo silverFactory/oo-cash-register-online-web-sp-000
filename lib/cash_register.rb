@@ -25,6 +25,11 @@ class CashRegister
   end
   def void_last_transaction
 
+  until @items[@items.length - 1] != @last_item[0] do
+    @total = @total - @last_item[1]
+    @items.pop
+  end
+  @total
   end
 
 end
